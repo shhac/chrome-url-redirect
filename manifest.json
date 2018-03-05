@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    "name": "URL Redirect",
+    "version": "0.0.1",
+
+    "background": {
+        "scripts": ["redirect.js"]
+    },
+    
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "*://www.googleadservices.com/*",
+        "*://clickserve.dartsearch.net/*"
+    ],
+
+    "description": "Redirect based on URL params",
+    "icons": {}
+}
