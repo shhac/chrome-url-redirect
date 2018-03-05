@@ -4,12 +4,12 @@ const readParam = (urlStr, param) => {
     return url.searchParams.get(param) || null;
 }
 
-const attempt = (list, url) => list.reduce(readParam, url);
+const attempt = url => list => list.reduce(readParam, url);
 
 const handler = redirect => {
     return function (details) {
         const redirectUrl = redirect.params
-            .map(list => attempt(list, details.url))
+            .map(attempt(details.url))
             .find(item => item !== null);
 
         if (!redirectUrl) return;
